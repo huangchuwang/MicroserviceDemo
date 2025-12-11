@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\Microservice.IdentityServer\\Microservice.IdentityServer.csproj": {}
+    "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\Microservice.IdentityServer\\Microservice.IdentityServer.csproj": {}
   },
   "projects": {
-    "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\Microservice.IdentityServer\\Microservice.IdentityServer.csproj": {
+    "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\Microservice.IdentityServer\\Microservice.IdentityServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\Microservice.IdentityServer\\Microservice.IdentityServer.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\Microservice.IdentityServer\\Microservice.IdentityServer.csproj",
         "projectName": "Microservice.IdentityServer",
-        "projectPath": "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\Microservice.IdentityServer\\Microservice.IdentityServer.csproj",
-        "packagesPath": "C:\\Users\\hcw\\.nuget\\packages\\",
-        "outputPath": "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\Microservice.IdentityServer\\obj\\",
+        "projectPath": "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\Microservice.IdentityServer\\Microservice.IdentityServer.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\Microservice.IdentityServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\VS\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\hcw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\SharedKernel\\SharedKernel.csproj": {
-                "projectPath": "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\SharedKernel\\SharedKernel.csproj"
+              "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\SharedKernel\\SharedKernel.csproj": {
+                "projectPath": "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\SharedKernel\\SharedKernel.csproj"
               }
             }
           }
@@ -49,7 +49,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -99,24 +99,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\SharedKernel\\SharedKernel.csproj": {
+    "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\SharedKernel\\SharedKernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\SharedKernel\\SharedKernel.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\SharedKernel\\SharedKernel.csproj",
         "projectName": "SharedKernel",
-        "projectPath": "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\SharedKernel\\SharedKernel.csproj",
-        "packagesPath": "C:\\Users\\hcw\\.nuget\\packages\\",
-        "outputPath": "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\SharedKernel\\obj\\",
+        "projectPath": "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\SharedKernel\\SharedKernel.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\SharedKernel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\VS\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\hcw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -144,7 +144,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -168,7 +168,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

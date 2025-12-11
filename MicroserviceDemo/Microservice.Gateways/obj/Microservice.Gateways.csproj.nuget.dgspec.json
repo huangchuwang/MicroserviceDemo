@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\Microservice.Gateways\\Microservice.Gateways.csproj": {}
+    "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\Microservice.Gateways\\Microservice.Gateways.csproj": {}
   },
   "projects": {
-    "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\Microservice.Gateways\\Microservice.Gateways.csproj": {
+    "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\Microservice.Gateways\\Microservice.Gateways.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\Microservice.Gateways\\Microservice.Gateways.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\Microservice.Gateways\\Microservice.Gateways.csproj",
         "projectName": "Microservice.Gateways",
-        "projectPath": "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\Microservice.Gateways\\Microservice.Gateways.csproj",
-        "packagesPath": "C:\\Users\\hcw\\.nuget\\packages\\",
-        "outputPath": "F:\\Start\\C#\\Microservice\\MicroserviceDemo\\Microservice.Gateways\\obj\\",
+        "projectPath": "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\Microservice.Gateways\\Microservice.Gateways.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ASUS\\Desktop\\Work\\StartTest\\MicroserviceDemo\\MicroserviceDemo\\Microservice.Gateways\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\VS\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\hcw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -45,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -83,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

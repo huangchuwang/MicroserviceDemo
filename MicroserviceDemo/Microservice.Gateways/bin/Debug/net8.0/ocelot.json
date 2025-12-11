@@ -12,7 +12,10 @@
       "DownstreamPathTemplate": "/api/auth/{everything}",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          //"这里有个大坑：
+          //Ocelot" "里的","localhost" "在","Docker" "里是行不通的。",
+          //"在" "Docker","网络里，网关想找" "Identity","服务，必须用它的服务名" "identity-api（即","docker-compose.yml" "里的","service" "名字）",
+          "Host": "identity-api",
           "Port": 5001
         }
       ]
