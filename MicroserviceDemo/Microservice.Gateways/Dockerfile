@@ -1,17 +1,19 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# 网关没有引用 SharedKernel，所以比较简单，但保持上下文一致性
-COPY ["Gateways/WebApiGateway/WebApiGateway.csproj", "Gateways/WebApiGateway/"]
+# 修正：使用实际的文件夹名称
+COPY ["Microservice.Gateways/Microservice.Gateways.csproj", "Microservice.Gateways/"]
+# 注意：网关通常不直接引用 SharedKernel，如果你的项目引用了，请取消下面这行的注释
+# COPY ["SharedKernel/SharedKernel.csproj", "SharedKernel/"]
 
-RUN dotnet restore "Gateways/WebApiGateway/WebApiGateway.csproj"
+RUN dotnet restore "Microservice.Gateways/Microservice.Gateways.csproj"
 
 COPY . .
 
-WORKDIR "/src/Gateways/WebApiGateway"
+WORKDIR "/src/Microservice.Gateways"
 RUN dotnet publish -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
-ENTRYPOINT ["dotnet", "WebApiGateway.dll"]
+ENTRYPOINT ["dotnet", "Microservice.Gateways.dll"]

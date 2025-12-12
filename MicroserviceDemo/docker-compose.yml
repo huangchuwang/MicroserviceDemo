@@ -1,29 +1,29 @@
 version: '3.8'
 
 services:
-  # 1. 数据库服务
+  # 1. SQL Server 数据库
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: microservice-sql
     environment:
       - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=MyStrong!Passw0rd # 强密码
+      - MSSQL_SA_PASSWORD=MyStrong!Passw0rd
     ports:
-      - "1433:1433" # 映射到主机，方便你用 SSMS 连接
+      - "1433:1433"
     networks:
       - micro-net
 
   # 2. Identity 服务
   identity-api:
     build:
-      context: ./src # 关键：构建上下文设为 src 根目录，这样 Dockerfile 才能找到 SharedKernel
-      dockerfile: Services/Identity/Dockerfile
+      context: .   # <--- 修改为当前目录
+      dockerfile: Microservice.IdentityServer/Dockerfile  # <--- 修正为实际文件夹名
     container_name: identity-api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=MicroService_IdentityDb;User Id=sa;Password=MyStrong!Passw0rd;TrustServerCertificate=True;
     ports:
-      - "5001:8080" # 容器内是 8080 (NET 8 默认)，映射到宿主机 5001
+      - "5001:8080"
     depends_on:
       - sqlserver
     networks:
@@ -32,13 +32,12 @@ services:
   # 3. Product 服务
   product-api:
     build:
-      context: ./src
-      dockerfile: Services/Product/Dockerfile
+      context: .   # <--- 修改为当前目录
+      dockerfile: ProductService/Dockerfile  # <--- 修正为实际文件夹名
     container_name: product-api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=MicroService_ProductDb;User Id=sa;Password=MyStrong!Passw0rd;TrustServerCertificate=True;
-      # 注意：Product 需要验证 Token，密钥必须和 Identity 一致
       - JwtSettings__SecretKey=ThisIsASecretKeyForMyMicroserviceProject_MustBeLongEnough
       - JwtSettings__Issuer=MyMicroserviceApp
       - JwtSettings__Audience=MyMicroserviceClient
@@ -52,8 +51,8 @@ services:
   # 4. Gateway 网关
   gateway-api:
     build:
-      context: ./src
-      dockerfile: Gateways/WebApiGateway/Dockerfile
+      context: .   # <--- 修改为当前目录
+      dockerfile: Microservice.Gateways/Dockerfile  # <--- 修正为实际文件夹名
     container_name: gateway-api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

@@ -39,7 +39,8 @@ namespace Microservice.IdentityServer
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            //在 Docker 内部通信通常走 HTTP
+            //app.UseHttpsRedirection();
             app.UseAuthorization();
             app.MapControllers();
 

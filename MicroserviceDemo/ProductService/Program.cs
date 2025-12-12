@@ -53,7 +53,7 @@ namespace Product
             // SharedKernel 全局异常处理
             app.UseGlobalExceptionHandler();
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             // 4. 先认证，再授权
             app.UseAuthentication();

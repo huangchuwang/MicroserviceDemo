@@ -1,17 +1,18 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-COPY ["Services/Product/Product.csproj", "Services/Product/"]
-COPY ["Common/SharedKernel/SharedKernel.csproj", "Common/SharedKernel/"]
+# 修正：使用实际的文件夹名称
+COPY ["ProductService/ProductService.csproj", "ProductService/"]
+COPY ["SharedKernel/SharedKernel.csproj", "SharedKernel/"]
 
-RUN dotnet restore "Services/Product/Product.csproj"
+RUN dotnet restore "ProductService/ProductService.csproj"
 
 COPY . .
 
-WORKDIR "/src/Services/Product"
+WORKDIR "/src/ProductService"
 RUN dotnet publish -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
-ENTRYPOINT ["dotnet", "Product.dll"]
+ENTRYPOINT ["dotnet", "ProductService.dll"]
