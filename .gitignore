@@ -1,1 +1,3 @@
 .vs/
+/MicroserviceDemo/Microservice.Gateways/bin
+/MicroserviceDemo/Microservice.Gateways/obj

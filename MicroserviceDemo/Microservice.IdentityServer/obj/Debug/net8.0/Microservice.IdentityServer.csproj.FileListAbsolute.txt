@@ -296,3 +296,4 @@ C:\Users\ASUS\Desktop\Work\StartTest\MicroserviceDemo\MicroserviceDemo\Microserv
 C:\Users\ASUS\Desktop\Work\StartTest\MicroserviceDemo\MicroserviceDemo\Microservice.IdentityServer\obj\Debug\net8.0\Microservice.IdentityServer.pdb
 C:\Users\ASUS\Desktop\Work\StartTest\MicroserviceDemo\MicroserviceDemo\Microservice.IdentityServer\obj\Debug\net8.0\Microservice.IdentityServer.genruntimeconfig.cache
 C:\Users\ASUS\Desktop\Work\StartTest\MicroserviceDemo\MicroserviceDemo\Microservice.IdentityServer\obj\Debug\net8.0\ref\Microservice.IdentityServer.dll
+C:\Users\ASUS\Desktop\Work\StartTest\MicroserviceDemo\MicroserviceDemo\Microservice.IdentityServer\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

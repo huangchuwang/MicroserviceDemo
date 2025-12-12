@@ -32,7 +32,7 @@
       "DownstreamPathTemplate": "/api/product/{everything}",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "product-api",
           "Port": 5002
         }
       ]
