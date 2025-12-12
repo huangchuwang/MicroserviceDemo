@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-  # 1. SQL Server 数据库
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: microservice-sql
@@ -12,15 +11,18 @@ services:
       - "1433:1433"
     networks:
       - micro-net
-
-  # 2. Identity 服务
+      # 在 sqlserver 服务中添加了 volumes 映射，将 sql_data 挂载到容器内的 /var/opt/mssql
+    volumes:
+      - sql_data:/var/opt/mssql
   identity-api:
     build:
-      context: .   # <--- 修改为当前目录
-      dockerfile: Microservice.IdentityServer/Dockerfile  # <--- 修正为实际文件夹名
+      context: .
+      dockerfile: Microservice.IdentityServer/Dockerfile
     container_name: identity-api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      # 👇 强制监听 HTTP 端口
+      - ASPNETCORE_URLS=http://+:8080
       - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=MicroService_IdentityDb;User Id=sa;Password=MyStrong!Passw0rd;TrustServerCertificate=True;
     ports:
       - "5001:8080"
@@ -29,14 +31,15 @@ services:
     networks:
       - micro-net
 
-  # 3. Product 服务
   product-api:
     build:
-      context: .   # <--- 修改为当前目录
-      dockerfile: ProductService/Dockerfile  # <--- 修正为实际文件夹名
+      context: .
+      dockerfile: ProductService/Dockerfile
     container_name: product-api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      # 👇 强制监听 HTTP 端口
+      - ASPNETCORE_URLS=http://+:8080
       - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=MicroService_ProductDb;User Id=sa;Password=MyStrong!Passw0rd;TrustServerCertificate=True;
       - JwtSettings__SecretKey=ThisIsASecretKeyForMyMicroserviceProject_MustBeLongEnough
       - JwtSettings__Issuer=MyMicroserviceApp
@@ -48,14 +51,15 @@ services:
     networks:
       - micro-net
 
-  # 4. Gateway 网关
   gateway-api:
     build:
-      context: .   # <--- 修改为当前目录
-      dockerfile: Microservice.Gateways/Dockerfile  # <--- 修正为实际文件夹名
+      context: .
+      dockerfile: Microservice.Gateways/Dockerfile
     container_name: gateway-api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      # 👇 强制监听 HTTP 端口
+      - ASPNETCORE_URLS=http://+:8080
     ports:
       - "5000:8080"
     depends_on:
@@ -67,3 +71,6 @@ services:
 networks:
   micro-net:
     driver: bridge
+#volumes 声明
+volumes:
+  sql_data:

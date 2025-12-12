@@ -24,8 +24,8 @@ namespace Microservice.IdentityServer
             builder.Services.AddScoped<IAuthService, AuthService>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            //builder.Services.AddEndpointsApiExplorer();
+            //builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
 
@@ -33,11 +33,11 @@ namespace Microservice.IdentityServer
             app.UseGlobalExceptionHandler();
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+            //if (app.Environment.IsDevelopment())
+            //{
+            //    app.UseSwagger();
+            //    app.UseSwaggerUI();
+            //}
 
             //在 Docker 内部通信通常走 HTTP
             //app.UseHttpsRedirection();

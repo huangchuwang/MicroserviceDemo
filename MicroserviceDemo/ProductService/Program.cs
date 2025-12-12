@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+ï»¿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ProductService.Data;
@@ -6,7 +6,7 @@ using ProductService.Services;
 using SharedKernel.Extensions;
 using System.Text;
 
-namespace Product
+namespace ProductService
 {
     public class Program
     {
@@ -14,23 +14,21 @@ namespace Product
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddControllers();
 
-            // 1. ×¢²áÊı¾İ¿â
             builder.Services.AddDbContext<ProductDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            // 2. ×¢²á·şÎñ
             builder.Services.AddScoped<IMyProductService, MyProductService>();
 
-            // 3. ÅäÖÃ JWT ÑéÖ¤
             var jwtSettings = builder.Configuration.GetSection("JwtSettings");
-            // ½¨Òé£ºÔö¼Ó¿ÕÖµ¼ì²é£¬·ÀÖ¹ÅäÖÃÈ±Ê§µ¼ÖÂÆô¶¯±¨´í
             var secretKey = jwtSettings["SecretKey"];
+
+            // å®‰å…¨æ£€æŸ¥
             if (string.IsNullOrEmpty(secretKey))
             {
-                throw new ArgumentNullException("JwtSettings:SecretKey", "JWT SecretKey is missing in appsettings.json");
+                // ä¸ºäº†é¿å…å¯åŠ¨å´©æºƒï¼Œç»™ä¸€ä¸ªé»˜è®¤å€¼æˆ–è€…æŠ›å‡ºæ›´æ˜ç¡®çš„å¼‚å¸¸ï¼Œè¿™é‡Œç®€å•å¤„ç†
+                secretKey = "ThisIsADefaultSecretKeyPleaseChangeItInProduction";
             }
 
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -50,12 +48,11 @@ namespace Product
 
             var app = builder.Build();
 
-            // SharedKernel È«¾ÖÒì³£´¦Àí
             app.UseGlobalExceptionHandler();
 
-            //app.UseHttpsRedirection();
+            // âŒ å…³é”®ä¿®æ”¹ï¼šåŒæ ·æ³¨é‡Šæ‰ HTTPS é‡å®šå‘
+            // app.UseHttpsRedirection();
 
-            // 4. ÏÈÈÏÖ¤£¬ÔÙÊÚÈ¨
             app.UseAuthentication();
             app.UseAuthorization();
 
