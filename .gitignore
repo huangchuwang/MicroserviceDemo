@@ -1,3 +1,20 @@
+## 1. 忽略所有项目的构建输出和临时文件 (核心)
+# 使用通配符，这样新增 ProductService 或其他服务时无需修改此文件
+**/[Bb]in/
+**/[Oo]bj/
+
+## 2. 忽略 IDE 生成的用户特定配置文件
 .vs/
-/MicroserviceDemo/Microservice.Gateways/bin
-/MicroserviceDemo/Microservice.Gateways/obj
+.vscode/
+*.user
+*.suo
+*.userprefs
+*.launchsettings.json  # 可选：如果在团队中每个人端口配置不同，可以忽略；如果需要共享调试配置则保留
+
+## 3. 忽略敏感环境配置
+# 生产环境配置通常不应提交，开发环境配置(appsettings.Development.json)视团队约定而定
+# .env 
+
+## 4. 操作系统生成的临时文件
+.DS_Store
+Thumbs.db
